@@ -19,6 +19,13 @@ function validateRegisterForm(
     }
   }
 
+  if (!lastname || typeof lastname !== "string") {
+    return {
+      error: true,
+      message: "the lastname is not valid"
+    }
+
+  }
 }
 
 export { validateRegisterForm };
