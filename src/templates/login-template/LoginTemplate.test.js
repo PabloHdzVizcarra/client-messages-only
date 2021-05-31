@@ -15,4 +15,19 @@ describe("test in LoginTemplate component", () => {
     const errorAlert = await screen.findByTestId("alert-error");
     expect(errorAlert).toBeInTheDocument();
   });
+
+  test("should display an alert when the form password data is invalid", async () => {
+    render(<LoginTemplate/>);
+
+    const inputEmail = screen.getAllByRole("textbox")[0];
+    const inputPassword = screen.getAllByRole("textbox")[0];
+    const buttonSubmit = screen.getByRole("button");
+
+    userEvent.type(inputEmail, "test@email.com");
+    userEvent.type(inputPassword, "error");
+    userEvent.click(buttonSubmit);
+
+    const errorAlert = await screen.findByTestId("alert-error");
+    expect(errorAlert).toBeInTheDocument();
+  })
 });
