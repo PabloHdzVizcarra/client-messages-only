@@ -30,6 +30,7 @@ function FormLogin ({handleSubmit, inputValues, handleInputChange}) {
             name="password"
             value={inputValues.password}
             onChange={handleInputChange}
+            data-testid="input-password"
           />
         </div>
         <button type="submit">Enviar</button>

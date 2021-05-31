@@ -1,7 +1,7 @@
 import {
   render,
   screen,
-  waitForElementToBeRemoved,
+  waitFor,
 } from "@testing-library/react";
 import LoginTemplate from "./LoginTemplate";
 import userEvent from "@testing-library/user-event";
@@ -20,40 +20,43 @@ describe("test in LoginTemplate component", () => {
     expect(errorAlert).toBeInTheDocument();
   });
 
-  test("should display an alert when the form password data is invalid", async () => {
-    render(<LoginTemplate/>);
+  test("should display an alert when the form password data is invalid",
+    async () => {
+      render(<LoginTemplate/>);
 
-    const inputEmail = screen.getAllByRole("textbox")[0];
-    const inputPassword = screen.getAllByRole("textbox")[1];
-    const buttonSubmit = screen.getByRole("button");
+      const inputEmail = screen.getAllByRole("textbox")[0];
+      const inputPassword = screen.getByTestId("input-password");
+      const buttonSubmit = screen.getByRole("button");
 
-    userEvent.type(inputEmail, "test@email.com");
-    userEvent.type(inputPassword, "error");
-    userEvent.click(buttonSubmit);
+      userEvent.type(inputEmail, "test@email.com");
+      userEvent.type(inputPassword, "error");
+      userEvent.click(buttonSubmit);
 
-    const errorAlert = await screen.findByTestId("alert-error");
-    expect(errorAlert).toBeInTheDocument();
-  })
+      const errorAlert = await screen.findByTestId("alert-error");
+      expect(errorAlert).toBeInTheDocument();
+    });
 
-  test("should remove the alert when the data is successfully passed to the form", async () => {
-    render(<LoginTemplate/>);
+  test(
+    "should remove the alert when the data is successfully passed to the form",
+    async () => {
+      render(<LoginTemplate/>);
 
-    const inputEmail = screen.getAllByRole("textbox")[0];
-    const inputPassword = screen.getAllByRole("textbox")[1];
-    const buttonSubmit = screen.getByRole("button");
+      const inputEmail = screen.getAllByRole("textbox")[0];
+      const inputPassword = screen.getByTestId("input-password");
+      const buttonSubmit = screen.getByRole("button");
 
-    userEvent.type(inputEmail, "test@email.com");
-    userEvent.type(inputPassword, "error");
-    userEvent.click(buttonSubmit);
+      userEvent.type(inputEmail, "test@email.com");
+      userEvent.type(inputPassword, "error");
+      userEvent.click(buttonSubmit);
 
-    const errorAlert = await screen.findByTestId("alert-error");
-    expect(errorAlert).toBeInTheDocument();
+      const errorAlert = await screen.findByTestId("alert-error");
+      expect(errorAlert).toBeInTheDocument();
 
-    userEvent.type(inputPassword, "admin123");
-    userEvent.click(buttonSubmit);
+      userEvent.type(inputPassword, "admin123");
+      userEvent.click(buttonSubmit);
 
-    await waitForElementToBeRemoved(errorAlert).then(() => {
-      expect(errorAlert).not.toBeInTheDocument()
-    })
-  })
+      await waitFor(() => {
+        expect(errorAlert).not.toBeInTheDocument();
+      });
+    });
 });

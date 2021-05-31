@@ -24,6 +24,10 @@ function LoginTemplate () {
       setError({ error: true, message: errorMessage });
       return null;
     }
+    setError({
+      error: false,
+      message: ""
+    })
 
     console.log(inputValues);
   }
