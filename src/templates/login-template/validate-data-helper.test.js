@@ -14,10 +14,19 @@ describe("test in validateLoginData function", () => {
     "should return an error and message with the password is less than 8 and greater than 20",
     () => {
       const mockEmail = "test@test.com";
-      const mockPassword = "error"
+      const mockPassword = "error";
       const { error, message } = validateLoginData(mockEmail, mockPassword);
 
       expect(error).toBeTruthy();
       expect(message).toMatch(/password/);
     });
+
+  test("should return a confirmation message when all data is valid", () => {
+    const mockEmail = "test@test.com";
+    const mockPassword = "admin123";
+    const { error, message } = validateLoginData(mockEmail, mockPassword);
+
+    expect(error).toBeFalsy();
+    expect(message).toEqual("");
+  });
 });
