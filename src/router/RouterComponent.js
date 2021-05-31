@@ -6,8 +6,9 @@ import {
 } from "react-router-dom";
 import LoginPage from "../pages/login-page/LoginPage";
 import MainPage from "../pages/main-page/MainPage";
+import RegisterPage from "../pages/register-page/RegisterPage";
 
-function RouterComponent (props) {
+function RouterComponent () {
   return (
     <Router>
       <div>
@@ -15,7 +16,10 @@ function RouterComponent (props) {
           <Route path="/login">
             <LoginPage/>
           </Route>
-          <Route path="/" >
+          <Route path="/register">
+            <RegisterPage/>
+          </Route>
+          <Route path="/">
             <MainPage/>
           </Route>
         </Switch>
