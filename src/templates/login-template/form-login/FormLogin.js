@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 
 FormLogin.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
@@ -33,7 +34,10 @@ function FormLogin ({handleSubmit, inputValues, handleInputChange}) {
             data-testid="input-password"
           />
         </div>
-        <button type="submit">Enviar</button>
+        <div>
+          <button type="submit">Login</button>
+          <Link to="/register"><button>Register</button></Link>
+        </div>
       </form>
     </div>
   );

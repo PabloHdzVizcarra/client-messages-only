@@ -10,7 +10,7 @@ function LoginTemplate () {
     message: "",
   });
 
-  const [inputValues, handleInputChange] = useForm({
+  const [inputValues, handleInputChange, reset] = useForm({
     email: "",
     password: "",
   });
@@ -26,8 +26,9 @@ function LoginTemplate () {
     }
     setError({
       error: false,
-      message: ""
-    })
+      message: "",
+    });
+    reset();
 
     console.log(inputValues);
   }
