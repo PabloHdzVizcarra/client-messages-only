@@ -5,7 +5,7 @@ ErrorAlert.propTypes = {
   text: PropTypes.string.isRequired,
 };
 
-function ErrorAlert ({text}) {
+function ErrorAlert ({ text }) {
   return (
     <div data-testid="alert-error">
       <p>{text}</p>

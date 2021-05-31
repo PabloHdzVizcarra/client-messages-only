@@ -1,15 +1,15 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import "./form-login-style.css"
+import "./form-login-style.css";
 
 FormLogin.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   inputValues: PropTypes.object.isRequired,
   handleInputChange: PropTypes.func.isRequired,
-}
+};
 
-function FormLogin ({handleSubmit, inputValues, handleInputChange}) {
+function FormLogin ({ handleSubmit, inputValues, handleInputChange }) {
   return (
     <div className="c-form">
       <h2 className="form__title">Login</h2>
