@@ -1,8 +1,10 @@
 import React from "react";
+import RegisterTemplate
+  from "../../templates/register-template/RegisterTemplate";
 
 function RegisterPage () {
   return (
-    <div>Register Page</div>
+    <RegisterTemplate/>
   );
 }
 
