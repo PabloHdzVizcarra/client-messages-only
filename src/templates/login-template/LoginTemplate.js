@@ -3,7 +3,7 @@ import FormLogin from "../../components/organisms/form-login/FormLogin";
 import { useForm } from "../../hooks/use-form/useForm";
 import { validateLoginData } from "./validate-data-helper";
 
-function LoginTemplate (props) {
+function LoginTemplate () {
   const [error, setError] = React.useState({
     error: false,
     message: "",
