@@ -1,0 +1,24 @@
+/**
+ * validate data to form
+ * @param {string} name
+ * @param {string} email
+ * @param {string} password
+ * @param {string} repeatPassword
+ * @param {string} lastname
+ */
+function validateRegisterForm(
+  name,
+  lastname,
+  email,
+  password,
+  repeatPassword) {
+  if (!name) {
+    return {
+      error: true,
+      message: "the name is not valid"
+    }
+  }
+
+}
+
+export { validateRegisterForm };
