@@ -1,0 +1,67 @@
+.c-form
+{
+    padding: 10px;
+    border-radius: 4px;
+    color: #434A54;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form__title
+{
+    margin: 0 0 5px 0;
+    text-align: center;
+}
+
+.form__group
+{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    color: #656D78;
+}
+
+.form__group__input
+{
+    border-radius: 4px;
+    padding: 6px 12px;
+    border: 1px solid #AAB2BD;
+}
+
+.form__group__input:focus
+{
+    border: 2px solid #3BAFDA;
+    outline: none;
+}
+
+.form__group__submit
+{
+    background-color: #37BC9B;
+    border: none;
+    padding: 6px 12px;
+    color: white;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+.form__group__link
+{
+    display: flex;
+    margin: 10px 0;
+}
+
+.form__group__link > a
+{
+    color: #656D78;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 5px;
+
+    transition: 300ms ease color;
+}
+
+.form__group__link > a:hover
+{
+    color: #434A54;
+}

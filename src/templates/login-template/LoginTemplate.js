@@ -30,6 +30,7 @@ function LoginTemplate () {
     });
     reset();
 
+    //TODO: call api to login
     console.log(inputValues);
   }
 

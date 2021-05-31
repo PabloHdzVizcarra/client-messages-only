@@ -7,6 +7,7 @@ body, html {
   -moz-osx-font-smoothing: grayscale;
   font-family: 'IBM Plex Sans Condensed', sans-serif;
   height: 100%;
+  background-color: #F5F7FA;
 }
 
 code {
@@ -16,4 +17,5 @@ code {
 
 #root {
   min-height: 100%;
+  background-color: #F5F7FA;
 }
