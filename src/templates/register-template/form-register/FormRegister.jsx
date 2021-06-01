@@ -51,7 +51,7 @@ function FormRegister ({ handleSubmit, inputValues, handleInputChange }) {
           <label htmlFor="password-input">Contraseña</label>
           <input
             id="password-input"
-            type="text"
+            type="password"
             name="password"
             value={inputValues.password}
             onChange={handleInputChange}
@@ -62,7 +62,7 @@ function FormRegister ({ handleSubmit, inputValues, handleInputChange }) {
           <label htmlFor="repeatPassword-input">Repetir Contraseña</label>
           <input
             id="repeatPassword-input"
-            type="text"
+            type="password"
             name="repeatPassword"
             value={inputValues.repeatPassword}
             onChange={handleInputChange}
