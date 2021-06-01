@@ -12,7 +12,7 @@ function validateRegisterForm (
   email,
   password,
   repeatPassword) {
-  if (!name || typeof name !== "string") {
+  if (!name || typeof name !== "string" || name.length < 3) {
     return {
       error: true,
       message: "the name is not valid",
