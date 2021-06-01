@@ -16,15 +16,32 @@ describe("test in validateRegisterForm function", () => {
 
     expect(error).toBeTruthy();
     expect(message).toMatch(/lastname/);
-  })
+  });
 
   test("should return error when the email is not valid", () => {
     const mockName = "john";
     const mockLastname = "carter";
-    const mockEmail = "error@email"
-    const { error, message } = validateRegisterForm(mockName, mockLastname, mockEmail);
+    const mockEmail = "error@email";
+    const { error, message } = validateRegisterForm(mockName, mockLastname,
+      mockEmail);
 
     expect(error).toBeTruthy();
     expect(message).toMatch(/email/);
-  })
+  });
+
+  test("should return error when the password is not valid", () => {
+    const mockName = "john";
+    const mockLastname = "carter";
+    const mockEmail = "test@email.com";
+    const mockPassword = "badPass";
+    const { error, message } = validateRegisterForm(
+      mockName,
+      mockLastname,
+      mockEmail,
+      mockPassword
+    );
+
+    expect(error).toBeTruthy();
+    expect(message).toMatch(/password/);
+  });
 });

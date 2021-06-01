@@ -30,8 +30,15 @@ function validateRegisterForm(
   if (!regexEmail.test(email)) {
     return {
       error: true,
-      message: "The email is invalid",
+      message: "the email is invalid",
     };
+  }
+
+  if (!password || password.length < 8 ) {
+    return {
+      error: true,
+      message: "password length must be greater than 8"
+    }
   }
 }
 
