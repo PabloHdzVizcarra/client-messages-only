@@ -6,7 +6,7 @@
  * @param {string} repeatPassword
  * @param {string} lastname
  */
-function validateRegisterForm(
+function validateRegisterForm (
   name,
   lastname,
   email,
@@ -15,18 +15,18 @@ function validateRegisterForm(
   if (!name || typeof name !== "string") {
     return {
       error: true,
-      message: "the name is not valid"
-    }
+      message: "the name is not valid",
+    };
   }
 
   if (!lastname || typeof lastname !== "string") {
     return {
       error: true,
-      message: "the lastname is not valid"
-    }
+      message: "the lastname is not valid",
+    };
   }
 
-  const regexEmail = /^\S+@\S+\.\S+$/
+  const regexEmail = /^\S+@\S+\.\S+$/;
   if (!regexEmail.test(email)) {
     return {
       error: true,
@@ -34,19 +34,25 @@ function validateRegisterForm(
     };
   }
 
-  if (!password || password.length < 8 ) {
+  if (!password || password.length < 8) {
     return {
       error: true,
-      message: "password length must be greater than 8"
-    }
+      message: "password length must be greater than 8",
+    };
   }
 
   if (password !== repeatPassword) {
     return {
       error: true,
-      message: "the two passwords must be the same"
-    }
+      message: "the two passwords must be the same",
+    };
   }
+
+  return {
+    error: false,
+    message: "",
+  };
+
 }
 
 export { validateRegisterForm };
