@@ -24,7 +24,14 @@ function validateRegisterForm(
       error: true,
       message: "the lastname is not valid"
     }
+  }
 
+  const regexEmail = /^\S+@\S+\.\S+$/
+  if (!regexEmail.test(email)) {
+    return {
+      error: true,
+      message: "The email is invalid",
+    };
   }
 }
 
