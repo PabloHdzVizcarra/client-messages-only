@@ -40,6 +40,13 @@ function validateRegisterForm(
       message: "password length must be greater than 8"
     }
   }
+
+  if (password !== repeatPassword) {
+    return {
+      error: true,
+      message: "the two passwords must be the same"
+    }
+  }
 }
 
 export { validateRegisterForm };
