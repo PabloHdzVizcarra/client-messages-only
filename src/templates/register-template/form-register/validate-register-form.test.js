@@ -38,7 +38,7 @@ describe("test in validateRegisterForm function", () => {
       mockName,
       mockLastname,
       mockEmail,
-      mockPassword
+      mockPassword,
     );
 
     expect(error).toBeTruthy();
@@ -55,10 +55,28 @@ describe("test in validateRegisterForm function", () => {
       mockLastname,
       mockEmail,
       mockPassword,
-      mockRepeatPassword
+      mockRepeatPassword,
     );
 
     expect(error).toBeTruthy();
     expect(message).toMatch(/passwords/);
   });
+  test("the error property must be false when all data are correct", () => {
+    const mockName = "john";
+    const mockLastname = "carter";
+    const mockEmail = "test@email.com";
+    const mockPassword = "admin123";
+    const mockRepeatPassword = "admin123";
+    const { error, message } = validateRegisterForm(
+      mockName,
+      mockLastname,
+      mockEmail,
+      mockPassword,
+      mockRepeatPassword,
+    );
+
+    expect(error).toBeFalsy();
+    expect(message).toMatch("");
+  });
+
 });
