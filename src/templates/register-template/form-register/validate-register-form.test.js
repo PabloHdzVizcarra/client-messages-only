@@ -44,4 +44,21 @@ describe("test in validateRegisterForm function", () => {
     expect(error).toBeTruthy();
     expect(message).toMatch(/password/);
   });
+  test("the two passwords must be the same", () => {
+    const mockName = "john";
+    const mockLastname = "carter";
+    const mockEmail = "test@email.com";
+    const mockPassword = "admin123";
+    const mockRepeatPassword = "admin124";
+    const { error, message } = validateRegisterForm(
+      mockName,
+      mockLastname,
+      mockEmail,
+      mockPassword,
+      mockRepeatPassword
+    );
+
+    expect(error).toBeTruthy();
+    expect(message).toMatch(/passwords/);
+  });
 });
