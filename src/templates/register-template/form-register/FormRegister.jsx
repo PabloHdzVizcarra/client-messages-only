@@ -50,6 +50,7 @@ function FormRegister ({ handleSubmit, inputValues, handleInputChange }) {
         <div className="form__group">
           <label htmlFor="password-input">Contraseña</label>
           <input
+            data-testid="password1"
             id="password-input"
             type="password"
             name="password"
@@ -61,6 +62,7 @@ function FormRegister ({ handleSubmit, inputValues, handleInputChange }) {
         <div className="form__group">
           <label htmlFor="repeatPassword-input">Repetir Contraseña</label>
           <input
+            data-testid="password2"
             id="repeatPassword-input"
             type="password"
             name="repeatPassword"

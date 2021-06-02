@@ -27,9 +27,14 @@ function RegisterTemplate () {
     if (error) {
       setError({
         error,
-        message
-      })
+        message,
+      });
+      return null;
     }
+    setError({
+      error: false,
+      message: "",
+    });
     reset();
   }
 
