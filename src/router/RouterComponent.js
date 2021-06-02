@@ -7,8 +7,11 @@ import {
 import LoginPage from "../pages/login-page/LoginPage";
 import MainPage from "../pages/main-page/MainPage";
 import RegisterPage from "../pages/register-page/RegisterPage";
+import { useAuthState } from "../context/authContext";
 
 function RouterComponent () {
+  const { isActive } = useAuthState();
+
   return (
     <Router>
       <div>
@@ -20,7 +23,7 @@ function RouterComponent () {
             <RegisterPage/>
           </Route>
           <Route path="/">
-            <MainPage/>
+            {isActive ? <MainPage/> : <RegisterPage/>}
           </Route>
         </Switch>
       </div>
