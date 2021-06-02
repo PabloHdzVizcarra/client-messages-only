@@ -1,0 +1,17 @@
+.c-alert
+{
+    background-color: #F2838F;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+
+.alert__text
+{
+    color: #A94442;
+}
